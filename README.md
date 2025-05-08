@@ -264,13 +264,3 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- OpenAI for providing the AI capabilities
-- Supabase for the backend infrastructure
-- The open-source community for various tools and libraries used in this project
-
-## Support
-
-For support, please open an issue in the GitHub repository or contact our support team at support@healthjournal-ai.com.
