@@ -3,47 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthJournal AI - Open Source Health Tracking Platform</title>
+    <title>HealthJournal AI - AI-Powered Health Journaling</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
                     },
-                    colors: {
-                        github: {
-                            50: '#f6f8fa',
-                            100: '#ebeef1',
-                            600: '#2f363d',
-                            700: '#24292e',
-                        }
-                    }
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                    },
                 }
             }
         }
     </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        .feature-gradient-1 {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+        }
+        .feature-gradient-2 {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+    </style>
 </head>
-<body class="font-sans bg-github-50 text-github-700">
+<body class="font-sans">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-white/80 backdrop-blur-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
-                <div class="flex items-center space-x-4">
-                    <span class="text-2xl font-bold text-github-700">🏥 HealthJournal AI</span>
-                    <span class="hidden md:block px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Open Source</span>
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text">HealthJournal AI</span>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <a href="#tech-stack" class="text-gray-600 hover:text-github-700">Tech Stack</a>
-                    <a href="#contribute" class="text-gray-600 hover:text-github-700">Contribute</a>
-                    <a href="https://github.com/your-repo" class="flex items-center px-4 py-2 rounded-lg bg-github-700 text-white hover:bg-github-600 transition-colors">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                        </svg>
-                        Star on GitHub
+                <div class="flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
+                    <a href="#interface" class="text-gray-600 hover:text-gray-900">Interface</a>
+                    <a href="#security" class="text-gray-600 hover:text-gray-900">Security</a>
+                    <a href="#" class="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 text-white hover:from-blue-600 hover:to-teal-500 transition-all">
+                        Try Now
                     </a>
                 </div>
             </div>
@@ -51,268 +70,186 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="relative bg-white overflow-hidden border-b border-gray-200">
-        <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                    <div class="sm:text-center lg:text-left">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                            <span class="block">Open Source</span>
-                            <span class="block text-green-600">Health Tech</span>
-                        </h1>
-                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            Join us in building the future of personal health tracking. Contribute to our open-source platform combining AI, health informatics, and modern web technologies.
-                        </p>
-                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start space-x-4">
-                            <a href="#contribute" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 md:py-4 md:text-lg md:px-10 transition-colors">
-                                Start Contributing
-                            </a>
-                            <a href="https://github.com/your-repo" class="inline-flex items-center px-8 py-3 border border-gray-300 text-base font-medium rounded-lg text-github-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-colors">
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </main>
-            </div>
-        </div>
-        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <div class="h-56 w-full bg-github-50 sm:h-72 md:h-96 lg:w-full lg:h-full p-8">
-                <pre class="font-mono text-sm text-github-700 overflow-hidden">
-<code>// Example code snippet
-import { useHealthJournal } from '@health-journal/core';
-
-function HealthTracker() {
-  const { entries, insights } = useHealthJournal();
-  
-  return (
-    <AIHealthAnalysis
-      data={entries}
-      insights={insights}
-      model="gpt-4"
-    />
-  );
-}</code></pre>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tech Stack Section -->
-    <div id="tech-stack" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center mb-12">
-                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Tech Stack</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Built with Modern Technologies
+    <div class="hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Transform Your Health Journey with
+                    <span class="gradient-text">AI-Powered Journaling</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Experience personalized health insights through advanced language models. Your personal health companion that understands, learns, and grows with you.
                 </p>
-            </div>
-
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-                <!-- Frontend -->
-                <div class="relative rounded-2xl border border-gray-200 p-8 hover:border-green-500 transition-colors">
-                    <h3 class="text-xl font-bold text-github-700 mb-4">Frontend</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Next.js + TypeScript
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            React Native + Expo
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Tailwind CSS
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Backend -->
-                <div class="relative rounded-2xl border border-gray-200 p-8 hover:border-green-500 transition-colors">
-                    <h3 class="text-xl font-bold text-github-700 mb-4">Backend</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Supabase
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            PostgreSQL
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            OpenAI API
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Developer Tools -->
-                <div class="relative rounded-2xl border border-gray-200 p-8 hover:border-green-500 transition-colors">
-                    <h3 class="text-xl font-bold text-github-700 mb-4">Developer Tools</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            TypeScript
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            ESLint
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            Jest
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contribute Section -->
-    <div id="contribute" class="py-16 bg-github-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center mb-12">
-                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Contribute</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Join Our Community
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <!-- Good First Issues -->
-                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                        <h3 class="text-xl font-bold text-github-700">Good First Issues</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        New to the project? We've got plenty of tagged issues perfect for first-time contributors.
-                    </p>
-                    <a href="https://github.com/your-repo/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" class="text-green-600 hover:text-green-700 font-medium">
-                        Browse Issues →
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 text-white hover:from-blue-600 hover:to-teal-500 transition-all">
+                        Get Started Free
                     </a>
-                </div>
-
-                <!-- Documentation -->
-                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-                        <h3 class="text-xl font-bold text-github-700">Documentation</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        Help improve our documentation. Good documentation makes the project more accessible.
-                    </p>
-                    <a href="https://github.com/your-repo/wiki" class="text-green-600 hover:text-green-700 font-medium">
-                        View Docs →
-                    </a>
-                </div>
-
-                <!-- Feature Development -->
-                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
-                        </svg>
-                        <h3 class="text-xl font-bold text-github-700">Feature Development</h3>
-                    </div>
-                    <p class="text-gray-600 mb-4">
-                        Work on new features and improvements. Check our roadmap and feature requests.
-                    </p>
-                    <a href="https://github.com/your-repo/projects" class="text-green-600 hover:text-green-700 font-medium">
-                        View Roadmap →
+                    <a href="#features" class="px-8 py-4 rounded-full border border-gray-300 text-gray-700 hover:bg-white/50 transition-all">
+                        Learn More
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Quick Start Section -->
-    <div class="bg-white py-16">
+    <!-- Features Section -->
+    <div id="features" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center mb-12">
-                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Quick Start</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Get Up and Running
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Intelligent Health Journaling</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Powered by advanced language models, our platform provides personalized insights and support for your health journey.
                 </p>
             </div>
 
-            <div class="bg-github-50 rounded-lg p-6 font-mono text-sm">
-                <div class="space-y-4">
-                    <p class="text-gray-700"># Clone the repository</p>
-                    <pre class="bg-white p-4 rounded-md"><code>git clone https://github.com/your-repo/health-journal.git
-cd health-journal</code></pre>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Integration -->
+                <div class="rounded-2xl p-8 feature-gradient-1">
+                    <div class="h-12 w-12 rounded-full bg-white/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Real-time AI Analysis</h3>
+                    <p class="text-gray-700">
+                        Get instant insights from our AI as you write. The system analyzes your entries in real-time, providing contextual understanding and personalized responses.
+                    </p>
+                </div>
 
-                    <p class="text-gray-700"># Install dependencies</p>
-                    <pre class="bg-white p-4 rounded-md"><code>npm install</code></pre>
+                <!-- Healthcare Specialization -->
+                <div class="rounded-2xl p-8 feature-gradient-2">
+                    <div class="h-12 w-12 rounded-full bg-white/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Specialist Modes</h3>
+                    <p class="text-gray-700">
+                        Choose from different healthcare perspectives including General Practitioner, Nutritionist, and Mental Health Support for tailored insights.
+                    </p>
+                </div>
 
-                    <p class="text-gray-700"># Start development server</p>
-                    <pre class="bg-white p-4 rounded-md"><code>npm run dev</code></pre>
+                <!-- Multi-Panel Interface -->
+                <div class="rounded-2xl p-8 feature-gradient-1">
+                    <div class="h-12 w-12 rounded-full bg-white/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Adaptive Interface</h3>
+                    <p class="text-gray-700">
+                        A flexible three-panel layout that adapts to your needs, featuring journal list, current entry, and AI chat with resizable sections.
+                    </p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Interface Showcase -->
+    <div id="interface" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Intuitive Interface</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    A thoughtfully designed workspace that puts your health journey first.
+                </p>
+            </div>
+
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-gray-900 to-gray-800 p-8">
+                    <!-- Mockup of the three-panel interface -->
+                    <div class="grid grid-cols-3 gap-4 h-full bg-white/10 rounded-lg p-4">
+                        <div class="bg-white/20 rounded-lg"></div>
+                        <div class="bg-white/20 rounded-lg"></div>
+                        <div class="bg-white/20 rounded-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Section -->
+    <div id="security" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Privacy & Security First</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Your health data deserves the highest level of protection.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="rounded-2xl p-8 bg-gradient-to-br from-gray-50 to-gray-100">
+                    <h3 class="text-xl font-semibold mb-4">Local-First Architecture</h3>
+                    <p class="text-gray-700">
+                        Your data stays on your device by default. Our local-first approach ensures your personal health information remains private and secure.
+                    </p>
+                </div>
+                <div class="rounded-2xl p-8 bg-gradient-to-br from-gray-50 to-gray-100">
+                    <h3 class="text-xl font-semibold mb-4">End-to-End Encryption</h3>
+                    <p class="text-gray-700">
+                        All data is encrypted at rest and in transit. Your journal entries are protected with industry-standard encryption protocols.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-gradient-to-r from-blue-500 to-teal-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                Start Your Health Journey Today
+            </h2>
+            <p class="text-white/90 mb-8 max-w-2xl mx-auto">
+                Join thousands of users who are taking control of their health with AI-powered journaling.
+            </p>
+            <a href="#" class="inline-block px-8 py-4 rounded-full bg-white text-blue-600 hover:bg-gray-100 transition-all">
+                Get Started Free
+            </a>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-github-700 text-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Community</h3>
+                    <h3 class="text-lg font-semibold mb-4">Product</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">GitHub Discussions</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Discord Server</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Contributing Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Resources</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Documentation</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">API Reference</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Examples</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">API</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Guides</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">More</h3>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Releases</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Roadmap</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Terms of Use</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">License</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Security</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-600">
+            <div class="mt-8 pt-8 border-t border-gray-800">
                 <p class="text-center text-gray-400">
-                    © 2024 HealthJournal AI. Open source software under the MIT License.
+                    © 2024 HealthJournal AI. All rights reserved.
                 </p>
             </div>
         </div>
