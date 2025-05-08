@@ -1,0 +1,73 @@
+{
+  "name": "personal-health-record-nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "resolutions": {
+    "strip-ansi": "6.0.1",
+    "ansi-regex": "5.0.1",
+    "wrap-ansi": "7.0.0",
+    "string-width": "4.2.3",
+    "emoji-regex": "8.0.0"
+  },
+  "main": "electron/electron.js",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "next lint",
+    "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3001 && electron electron/electron.js\"",
+    "electron-build": "next build && electron-builder",
+    "electron-package": "electron-forge package",
+    "electron-make": "electron-forge make"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/supabase-js": "^2.36.0",
+    "@types/node": "^22.13.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "ai": "^4.1.46",
+    "chart.js": "^4.4.8",
+    "framer-motion": "^12.4.7",
+    "next": "^15.1.7",
+    "openai": "^4.85.4",
+    "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.15.1",
+    "react-markdown": "^10.0.0",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.18",
+    "concurrently": "^9.0.1",
+    "electron": "^32.1.2",
+    "electron-builder": "^25.0.5",
+    "electron-is-dev": "^3.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8.4.37",
+    "tailwindcss": "^3.4.1",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.yourapp.personal-health-record",
+    "productName": "Personal Health Record AI",
+    "files": [
+      "electron/",
+      "out/",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.healthcare-fitness"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

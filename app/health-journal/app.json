@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "Health Journal",
+    "slug": "health-journal",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow Health Journal to access your microphone for voice journal entries"
+        }, 
+         "expo-camera",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app uses the microphone to record your voice journal entries",
+         "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera"
+      },
+      "bundleIdentifier": "com.birgermoell.healthjournal"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "RECORD_AUDIO",
+        "CAMERA",
+        "MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.birgermoell.healthjournal"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "config": {
+        "webview": {
+          "allowsInlineMediaPlayback": true
+        }
+      }
+    },
+    "owner": "birgermoell",
+    "extra": {
+      "eas": {
+        "projectId": "bf4ffcfa-b1d8-400d-88a1-61020613fcf2"
+      }
+    }
+  }
+}
